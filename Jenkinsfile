@@ -1,6 +1,6 @@
 node("ansible_docker"){
     stage("Git checkout"){
-        git credentialsId: 'github_cred', url: 'https://github.com/Ecriptor/example-playbook.git'
+        git credentialsId: 'github_cred', url: 'git@github.com:Ecriptor/example-playbook.git'
     }
     stage("Prepare ssh key"){
         sh 'ansible-vault decrypt secret --vault-password-file vault_pass'
